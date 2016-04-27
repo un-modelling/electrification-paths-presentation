@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+
+  <title>Universal Electrification Access</title>
+
+  <!-- JAVASCRIPT -->
+  <script src="./lib/jquery-2.1.4.min.js"></script>
+  <script src="./lib/jquery.fullPage.min.js"></script>
+  <script src="./lib/bootstrap.min.js"></script>
+  <script src="./lib/d3.v3.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./lib/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./lib/jquery.fullPage.css">
+  <link rel="stylesheet" type="text/css" href="./style/main.css">
+  <link rel="stylesheet" type="text/css" href="./style/landing.css">
+  <link rel="stylesheet" type="text/css" href="./style/roboto.css">
+  <link rel="stylesheet" type="text/css" href="./style/brandbar.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/icons/flaticon.css">
+  <link rel="stylesheet" type="text/css" href="lib/animate.css">
+</head>
+
+<body>
+  <!--[if IE]>
+      <div>
+
+        <div id="brand-bar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container brandbar-header">
+            <div class="row">
+              <div class="col-md-3">
+                <a id="navLanChg" class="navbar-brand" href="http://www.un.org/en/index.html">Welcome to the United Nations</a>
+              </div>
+              <div class="col-md-9">
+                <a class="site-link" href="https://unite.un.org/analytics/desa/modellingtools">Back to DESA Modelling Tools Homepage
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-container container">
+          <br><br><br>
+          <div class="row">
+            <div class="col-md-1">
+              <img src="./img/logos/logo.png" alt="Home" class="noprint" style="padding-top:15px"/>
+            </div>
+            <div class="col-md-11">
+              <h1>UNIVERSAL ELECTRIFICATION ACCESS<h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 sec-center">
+              <h2><strong>Sorry, your browser is not supported</strong></h2>
+              </br>
+              <p style="font-size:20px;">This web application is designed to work on the following web browsers: Google Chrome, Mozilla Firefox and Safari. </br> </p>
+              <p style="font-size:20px;"> Please use or download the latest version here:</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+              <a href="https://www.google.com/chrome">
+                <img src="./img/browsers/browser_chrome.png" class="browser"></img>
+              </a>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <a href="http://www.apple.com/safari/">
+                <img src="./img/browsers/browser_safari.png" class="browser"></img>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="https://www.mozilla.org/en-US/firefox/new/">
+                <img src="./img/browsers/browser_firefox.png" class="browser"></img>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <![endif]-->
+
+  <div id="brand-bar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container brandbar-header">
+      <div class="row">
+        <div class="col-md-3">
+          <a id="navLanChg" class="navbar-brand" href="http://www.un.org/en/index.html">Welcome to the United Nations</a>
+        </div>
+        <div class="col-md-9">
+          <a class="site-link" href="https://unite.un.org/analytics/desa/modellingtools">Back to DESA Modelling Tools Homepage
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="buttonHolder" class="row">
+    <div id='landingButton'>
+      <a href="http://un-desa-modelling.github.io/electrification-paths-visualisation/" class='dashboard-button'>Explore the Model</a>
+    </div>
+    <div id='scrollText' onclick="downArrow()">
+      <a onclick="downArrow()" class='guide-button'>Start Guide</a>
+    </div>
+  </div>
+  <div id="topArrow" class="arrow-up" style="display: none;">
+    <div class="imgsContainer">
+      <button id="arrowUp" onclick="upArrow()"><i class="fa fa-chevron-up"></i></button>
+    </div>
+  </div>
+  <div id="bottomArrow" class="arrow-down" style="display: none;">
+    <div class="imgsContainer">
+      <button id="arrowDown" onclick="downArrow()"><i class="fa fa-chevron-down"></i></button>
+    </div>
+  </div>
+  <div id='staticButton' style="display: none;">
+    <a href="http://un-desa-modelling.github.io/electrification-paths-visualisation/" class='dashboard-button'>Explore the Model</a>
+  </div>
+
+  <div id="fullpage">
+    <div class="section" id="section0">
+      <div id="section-heading0" class='container'>
+        <h2 class='title'>Universal Access to Electricity</h2>
+
+        <p class='landing-text splash'>The 2030 Agenda has set the of goal universal access to electricity by 2030. The challenge is significant. It involves reaching population with limited incomes, often living in sparsely populated areas, mostly in developing and least developed
+          countries. Costs can tally. Taking into account local characteristics, this model finds the combination of technologies that can provide universal access to the population of every country at the lowest cost.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" id="section1">
+      <div id="section-heading3" class="container">
+        <div class="row">
+          <h1 class="section-heading">Visualizing Electrification Modelling Results</h1>
+          <div class="col-md-6">
+            <br>
+            <p class='landing-text'>The visualisation tool allows for further exploration of model results. It displays country maps showing the choice of technology –Grid, Mini-Grid, and Stand alone energy devices—for each locality of 10 by 10 kilometres, assuming five different
+              per capita consumption levels and two diesel prices.
+            </p>
+            <p class='landing-text'>
+              To ease visualisation, the six technologies currently considered are aggregated to three technology types --GRID, Mini-Grid, and Stand alone, and plotted in a country or region map.
+            </p>
+          </div>
+          <div class="col-md-6 image-container">
+            <img class="side-image" onclick="window.open(this.src)" src="img/africa-electrification.jpg" />
+            <div class="image-caption">Least cost electrification mix for higher diesel price and Tier 5 (Mentis et al: Lighting up the World: The first global application of an open source, spatial electrification model, OnSSET; submitted).</div>
+            <div class="image-caption">Click to enlarge the picture.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section2">
+      <div id="section-heading2" class="container">
+        <h1 class="section-heading">Universal Access</h1>
+        <div class="row">
+          <div class="col-md-6">
+
+            <p class='landing-text'>The model finds, using open geospatial data, which technologies provides electricity at the lowest cost to the population living in each 10 by 10 kilometers area in countries. The target population in each country is defined as the 2030 population
+              minus the 2012 population without access to electricity. The national growth rate is then applied to the 2012 population geospatial data for each 10 by 10 kilometres in countries.
+            </p>
+            <p class='landing-text'>The model makes choices on the levellized cost of technologies calculated based on locally adjusted technical data such as distance to grid, distance to diesel sourcing, solar radiation, wind factors, water availability, among others. In
+              granting universal access to electricity the model considers grid and off-grid options, five per-capita electricity consumption levels and two diesel prices. the model decides on the least costly option after comparing the costs of connecting
+              to the central grid, to a mini grid, or to stand-alone solutions.
+            </p>
+          </div>
+
+          <div class="col-md-6 image-container">
+            <img src="img/diagram.png" onclick="window.open(this.src)" class="side-image" />
+            <div class="image-caption">Framework of the applied GIS methodology and principal data sources (Mentis et al: Lighting up the World. The first global application of an open source, spatial electrification model, OnSSET; submitted)</div>
+            <div class="image-caption">Click to enlarge the picture.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="section-heading">Technologies</h1>
+            <br>
+            <p class="landing-text">The model currently considers six technologies groups in three types:</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="row">
+              <div class='access-image access-grid'>
+                <h3 class='access-title'>Grid</h3>
+              </div>
+              <p class="access-text">
+                The national interconnected network: distribution and transmission lines, as well as power generating stations, e.g. fossil fuel or geo thermal, hydro, and other plants.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <div class="row">
+              <div class='access-image access-minigrid'>
+                <h3 class='access-title'>Mini Grid</h3>
+              </div>
+              <p class="access-text">
+                Mini grids are (relatively) small networks that generate and distribute electricity to villages or neighborhoods. Mini-grids are powered by diesel, wind or solar technologies (mini-hydro plants will soon be added to the model).
+              </p>
+            </div>
+            <div class="row">
+              <div class='access-image access-standalone'>
+                <h3 class='access-title'>Stand alone</h3>
+              </div>
+              <p class="access-text">
+                Stand alone solutions refer to the provision of electricity using technologies appropriate for single users, e.g. households and small businesses. These include solar photovoltaic panels and diesel generators.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section4">
+      <div id="section-heading3" class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="section-heading">Scenarios</h1>
+            <p class='access-text'>The modelling is done for 10 alternative scenarios defined by 5 indicative quantities of electricity consumption and two diesel prices.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <p class='access-text'>The first indicative consumption provides approximately 20 kWh per household per year while the fifth provides 2,195 kWh. Indicatively, in the first scenario households can only have task-lighting and recharging a cell phone or a radio; in
+              the fifth households have enough electricity to enjoy general lighting and continuous use of heavy appliances, such as refrigeration, air conditioning and eventually cooking. From first to fifth, scenarios increase available amounts of electricity
+              incrementally. A household size of 5 is assumed thoroughly.
+            </p>
+            <table id="tiers" class="table table-hover">
+              <thead>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="warning col-md-2">Indicative services made possible by specified kilowatts of electricity</td>
+                  <td class="col-md-2">
+                    <object type="image/svg+xml" data="./img/lightbulb-icon.svg" class="tier-icon"></object>
+                    <br> Task lightning
+                    <br>+
+                    <br>phone charging or radio</td>
+                  <td class="col-md-2">
+                    <object type="image/svg+xml" data="./img/tele-icon.svg" class="tier-icon"></object>
+                    <br> Tier 1
+                    <br>+
+                    <br>General lightning + air circulation + television</td>
+                  <td class="col-md-2">
+                    <object type="image/svg+xml" data="./img/washing-machine-icon.svg" class="tier-icon"></object>
+                    <br> Tier 2
+                    <br>+
+                    <br>Light appliances <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="i.e. General food processing and washing machine"></i></td>
+                  <td class="col-md-2">
+                    <object type="image/svg+xml" data="./img/microwave-icon.svg" class="tier-icon"></object>
+                    <br> Tier 3
+                    <br>+
+                    <br>Medium or continuous applicances <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="i.e. Water heating, ironing, water pumping, rice cooking, refrigeration, micro wave"></i></td>
+                  <td class="col-md-2">
+                    <object type="image/svg+xml" data="./img/ac-icon.svg" class="tier-icon"></object>
+                    <br> Tier 4
+                    <br>+
+                    <br>Heavy or continuous applicances
+                    <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="i.e. Air conditioning"></i>
+                  </td>
+                </tr>
+                <tr class="tier-title">
+                  <th class="col-md-2">Level of Access</th>
+                  <th>Tier-1</th>
+                  <th>Tier-2</th>
+                  <th>Tier-3</th>
+                  <th>Tier-4</th>
+                  <th>Tier-5</th>
+                </tr>
+                <tr>
+                  <td class="warning col-md-2">Consumption per Household per Person</td>
+                  <td colspan='5' id="household-consumption"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-md-4">
+            <p class='access-text'>
+              The model assumes two international diesel prices, 0.32 US$/liter and 0.70 US$/liter, used to calculate diesel costs in different localities. These, when crossed with household consumption levels, generate 10 scenarios of electrification for each country
+              or region.
+            </p>
+            <table id="tiers" class="table table-hover">
+              <thead>
+                <tr class="tier-title">
+                  <th>Diesel Level</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="warning">High</td>
+                  <td>0.70 US$/liter</td>
+                </tr>
+                <tr>
+                  <td class="warning">Low</td>
+                  <td>0.32 US$/liter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="section6">
+      <div id="section-heading3" class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="section-heading">How to Use this Tool</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p class="access-text">
+              The visualization allows the selection of countries from ad dropdown menu or by clicking on the chosen country in a map. Once in a country page, the visualization displays buttons to select one of the two diesel prices and one of the electricity consumption
+              levels or tiers. It shows a map of the selected country with the mesh of 10-by-10 kilometres localities. A bar chart and a doughnut graph.
+            </p>
+            <p class="access-text">
+              Each country map shows the following:
+              <ul>
+                <li>Existing and planned electricity lines (reference year is 2012)</li>
+                <li>The mesh of ten-by-ten kilometres areas coloured according to the type of technology</li>
+                <li>The opacity of each of the ten-by-ten localities represents the number of people estimated to live in 2030 in that locality, the darker the colour the more people live in the area</li>
+                <li>An opacity bar indicating the number of people corresponding to the opacity of the mesh.</li>
+              </ul>
+            </p>
+          </div>
+          <div class="col-md-8">
+            <img src="img/selector.png" class="main-image" />
+            <img src="img/selector-overlay.png" id="selector-overlay" class="main-image overlay" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section7">
+      <div id="section-heading3" class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="section-heading">How to Use this Tool</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p class="access-text">The bar chart displays, for a given price of diesel, the number of people to receive electricity by each of the three types of technologies, e.g. Grid, Mini-Grid and Staalone. The sum of the number of people in the three bars is the population
+              that must receive electricity between 2012 and 2030 if universal access is to be achieved. This number does not change, of course, from one scenario to another nor with changes in the number of people to be served by each technology.
+            </p>
+            <p class="access-text">
+              The doughnut plot shows the distributions by technology of the total investment cost needed to achieve by universal access. The total investment cost is displayed next to the graph, and it does normally change with scenario and combination of technologies.
+            </p>
+            <p class="access-text">
+              See the code of the model, data, and other supplementary material in this <a href="https://github.com/UN-DESA-Modelling/Electrification_Paths">link</a>.
+            </p>
+          </div>
+          <div class="col-md-8">
+            <img src="img/playground.png" class="main-image" />
+            <img src="img/playground-overlay.png" id="playground-overlay" class="main-image overlay" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function endGuide() {
+      $(document).ready(function() {
+        $.fn.fullpage.moveTo(6);
+      });
+    }
+
+    function upArrow() {
+      $(document).ready(function() {
+        $.fn.fullpage.moveSectionUp();
+      });
+    }
+
+    function downArrow() {
+      $(document).ready(function() {
+        $.fn.fullpage.moveSectionDown();
+      });
+    }
+  </script>
+
+  <script type="text/javascript" src="./js/landing.js"></script>
+</body>
+
+</html>
