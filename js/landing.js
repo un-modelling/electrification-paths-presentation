@@ -52,9 +52,11 @@ $(document).ready(function() {
         if (nextIndex == 1) {
           $('#scrollText').css('display', '')
           $('#landingButton').css('display', '')
+          $('#materialButton').css('display', '')
         } else {
           $('#scrollText').css('display', 'none')
           $('#landingButton').css('display', 'none')
+          $('#materialButton').css('display', 'none')
         }
 
       }

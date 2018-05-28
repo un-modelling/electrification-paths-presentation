@@ -141,13 +141,13 @@ body {
 #scrollText {
   display: table-cell;
 }
-#landingButton {
+#landingButton, #materialButton {
   display: table-cell;
   opacity: 1.0 !important;
   filter: alpha(opacity=100) !important;
   /* For IE8 and earlier */
 }
-#landingButton:focus {
+#landingButton:focus, #materialButton:focus {
   outline: none;
 }
 #staticButton {
@@ -271,7 +271,7 @@ a.dashboard-button:hover, a.guide-button:hover {
   #scrollText {
     visibility: hidden;
   }
-  #landingButton {
+  #landingButton, #materialButton {
     margin: 0;
     padding: 0;
   }
